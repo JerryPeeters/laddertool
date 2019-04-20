@@ -2,6 +2,19 @@ const textInput = 'textInput';
 const select = 'select';
 const directAppend = 'directAppend';
 
+/*
+
+This contains all question data. Uses keys and targetKeys to navigate the correct path. 
+
+AdditionalInfo: should contain key of target infoBlock and a line of text that will be clickable
+
+Options: should contain the targetKey. Forking is possible by giving different targetKeys per option.
+
+Append: Not all questions have an append. The React.Component should check wether a question or a question and 
+selected option has an append and call the append fn if selected.
+
+*/
+
 export const questions = {
     '3.1': {
         title: `Achtergrond Plan`,
@@ -80,10 +93,13 @@ export const questions = {
     },
     '3.3': {
         title: `Wat is het ruimtelijk verzorgingsgebied van het plan? `,
-        additionalInfo: [
-            {text: 'Klik hier voor de toelichting van het verzorgingsgebied', targetKey: '2.2'},
-            {text: 'Klik hier voor de specifieke reikwijdte bij woningen', targetKey: '2.2.1'},
-        ],
+        additionalInfo: [{
+            text: 'Klik hier voor de toelichting van het verzorgingsgebied', 
+            targetKey: '2.2'
+        }, {
+            text: 'Klik hier voor de specifieke reikwijdte bij woningen', 
+            targetKey: '2.2.1'
+        }, ],
         inputType: select,
         options: [{
             text: `Het ruimtelijk verzorgingsgebied voor woningbouw staat niet ter 
