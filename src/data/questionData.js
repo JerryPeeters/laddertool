@@ -1,6 +1,6 @@
-const textInput = 'textInput';
-const select = 'select';
-const directAppend = 'directAppend';
+export const textInput = 'textInput';
+export const select = 'select';
+export const directAppend = 'directAppend';
 
 /*
 
@@ -10,12 +10,19 @@ AdditionalInfo: should contain key of target infoBlock and a line of text that w
 
 Options: should contain the targetKey. Forking is possible by giving different targetKeys per option.
 
-Append: Not all questions have an append. The React.Component should check wether a question or a question and 
-selected option has an append and call the append fn if selected.
+Append: Not all questions have an append. The React.Component should check wether a question or a question and selected option has an append and call the append fn if selected.
 
 */
 
-export const questions = {
+export default {
+    'start': {
+        title: 'Voor welke functie wilt u een onderbouwing maken?',
+        inputType: select,
+        options: [{
+            text: `Functie wonen.`, 
+            targetKey: '3.1'
+            }]
+    },
     '3.1': {
         title: `Achtergrond Plan`,
         inputType: textInput,
@@ -30,7 +37,7 @@ export const questions = {
             stateRef: `achtergrond`
             }], 
         targetKey: '3.2',
-        append = (state) => state.achtergrond
+        append: (state) => state.achtergrond
     },
     '3.2': {
         title: `Is het plan een nieuwe stedelijke ontwikkeling? `,
@@ -66,7 +73,7 @@ export const questions = {
     '3.2.1': {
         inputType: directAppend,
         targetKey: '3.3',
-        append = (state) => {
+        append: (state) => {
             return (`
                 Plan ${state.planNaam} telt met ${state.woningAantal} woningen minder dan 12 woningen. 
                 Daarmee is geen sprake van een nieuwe stedelijke ontwikkeling (NSO) en 
@@ -81,7 +88,7 @@ export const questions = {
     '3.2.2': {
         inputType: directAppend,
         targetKey: '3.3',
-        append = (state) => {
+        append: (state) => {
             return (`
             Plan ${state.planNaam} telt met ${state.woningAantal} woningen 
             ${state.woningAantal === '12' ? '12' : 'meer dan 12'} woningen. 
@@ -110,7 +117,7 @@ export const questions = {
     '3.3.1': {
         inputType: directAppend,
         targetKey: '3.4',
-        append = (state) => {
+        append: (state) => {
             return (`
             Het ruimtelijk verzorgingsgebied voor plan ${state.planNaam} zijn de subregio’s 
             Zaanstreek-Waterland en Amsterdam. Dit is het gebiedsniveau waarop we de 
@@ -159,7 +166,7 @@ export const questions = {
             stateRef: 'Y'
         }],
         targetKey: '3.4.2',
-        append = (state) => {
+        append: (state) => {
             const currentYear = new Date().getFullYear();
             const {x, y} = state;
             const z = x - y;
@@ -192,7 +199,7 @@ export const questions = {
             stateRef: 'kwalitatieveOnderbouwing'
         }],
         targetKey: '3.5',
-        append = (state) => state.kwalitatieveOnderbouwing
+        append: (state) => state.kwalitatieveOnderbouwing
     },
     '3.5': {
         title: 'Ligt het plan binnen bestaand stedelijk gebied?',
@@ -220,7 +227,7 @@ export const questions = {
     '3.5.1': {
         inputType: directAppend,
         targetKey: 'end',
-        append = (state) => {
+        append: (state) => {
             return(`
             Het plangebied ligt binnen BSG. Het plan ligt binnen het bestaand stedelijk weefsel 
             van ${state.plaatsNaam} en/of het vigerende bestemmingsplan ${state.vigerendPlan} maakt 
@@ -239,7 +246,7 @@ export const questions = {
             stateRef: 'beschikbaarheidsReden'
         }],
         targetKey: 'end',
-        append = (state) => {
+        append: (state) => {
             return (`
             Plan X ligt buiten het bestaand stedelijk weefsel van ${state.plaatsNaam} en/of het 
             vigerende bestemmingsplan ${state.vigerendPlan} maakt nog geen stedelijke functie(s) mogelijk.

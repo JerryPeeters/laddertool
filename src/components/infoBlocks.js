@@ -44,7 +44,7 @@ export default {
                     betreffende ondergrens? Dan kwalificeert het zich in beginsel als stedelijke 
                     ontwikkeling in de zin van artikel 3.1.6. lid 2 Bro. 
                 </p>
-                <img src={'/images/21Tabel1.PNG'}/>
+                <img src={'/images/21Tabel1.PNG'} alt={''}/>
                 <p>
                     De Ladder is van toepassing op een nieuwe stedelijke ontwikkeling. Daarvan 
                     is sprake als het nieuwe bestemmingsplan meer bebouwing mogelijk maakt, of 
@@ -69,7 +69,7 @@ export default {
                     van het verzorgingsgebied zorgen. Dit is het schaalniveau waarop u afspraken maakt en 
                     voor afstemming zorgt. 
                 </p>
-                <img src={'/images/22Tabel2.PNG'}/>
+                <img src={'/images/22Tabel2.PNG'} alt={''}/>
             </div>
         )
     },
@@ -79,7 +79,7 @@ export default {
                 <h1 style={styles.h1Title}>
                     Verzorgingsgebied woningbouw: subregio’s Zaanstreek-Waterland en Amsterdam
                 </h1>
-                <img src={'/images/221Afbeelding0.PNG'}/>
+                <img src={'/images/221Afbeelding0.PNG'} alt={''}/>
                 <p>
                     De aard en omvang van een plan, maar zeker ook de ligging bepalen in hoeverre omliggende gemeenten/subregio’s tot het verzorgingsgebied horen. Bij grootstedelijke plannen met een omvangrijk, complementair programma en gunstige ligging ten opzichte van Amsterdam (denk aan Hembrug en Achtersluispolder), zijn de grensoverschrijdende effecten bijvoorbeeld sterker dan bij kleinschalige inbreidingsplannetjes met een doorsnee programma. 
                 </p>
@@ -94,11 +94,11 @@ export default {
                     </li>
                     </ul>
                 </p>
-                <img src={'/images/221Tabel3.PNG'}/>
+                <img src={'/images/221Tabel3.PNG'} alt={''}/>
                 <p>
                     Daarnaast vindt op bestuurlijk vlak, regionale afstemming van woningbouwprogrammering en plannen plaats. Deze regionale afstemming in de vorm van het regionale actieprogramma wonen (RAP) en de regionale woningbouwprogrammering, zijn onder andere geënt op de Ladder voor duurzame verstedelijking. De regionale afspraken worden geborgd in de provinciale verordening (PRV). Vanuit het (RAP) en de regionale woningbouwprogrammering in de voormalige Stadsregio Amsterdam (waaronder de regio’s Amsterdam, Amstelland-Meerlanden, en Zaanstad-Waterland vallen) is door de regiogemeenten afgesproken dat de volgende ‘marktregio’s’ ten aanzien van regionale afstemming worden gehanteerd: 
                 </p>
-                <img src={'/images/221Afbeelding1.PNG'}/>
+                <img src={'/images/221Afbeelding1.PNG'} alt={''}/>
             </div>
         )
     },
@@ -123,7 +123,7 @@ export default {
                 <p>
                     Uit de Monitor plancapaciteit MRA (2017) blijkt in het gehele verzorgingsgebied Zaanstreek-Waterland en Amsterdam harde plancapaciteit voor netto ongeveer 50.200 woningen (peildatum: juli 2017). Het overgrote deel ligt in Amsterdam: circa 44.200 woningen. In subregio Zaanstreek-Waterland gaat het om circa 6.000 woningen. Daarnaast zien we zachte (noot 8) plannen voor in totaal ruim 92.400 woningen in de gehele marktregio, waarvan ongeveer 86.000 woningen op inbreidingslocaties binnen bestaand stedelijk gebied (BSG). Een groot deel hiervan ligt opnieuw in Amsterdam. 
                 </p>
-                <img src={'/images/231Tabel7.PNG'}/>
+                <img src={'/images/231Tabel7.PNG'} alt={''}/>
                 <h3 style={styles.h3Title}>
                     Kwantitatieve vraag: circa 58.050 woningen 
                 </h3>
@@ -136,7 +136,7 @@ export default {
                 <p>
                     In 2019 bedraagt de vraag ongeveer 55.770 woningen (2019-2029) volgens de prognose. Weer een jaar later is dit 53.180 woningen. Hieruit valt af te leiden dat de additionele vraag naar de toekomst toe licht afneemt, maar dat er ook op langere termijn huishoudensgroei blijft.
                 </p>
-                <img src={'/images/231Tabel8.PNG'}/>
+                <img src={'/images/231Tabel8.PNG'} alt={''}/>
                 <h3 style={styles.h3Title}>
                     Kwantitatieve behoefte: circa 7.800 woningen
                 </h3>
@@ -146,14 +146,14 @@ export default {
                 <p>
                     Volgens huidige inzichten en beschikbare gegevens constateren we een kwantitatieve woningbehoefte van circa 7.800 woningen voor de periode 2018-2028 in uw verzorgingsgebied (regio Zaanstreek-Waterland en Amsterdam). In Zaanstreek-Waterland is een flinke behoefte, want het harde planaanbod bedraagt nog niet de helft van de additionele vraag voor de jaren 2018-2028.  
                 </p>
-                <img src={'/images/231Tabel9.PNG'}/>
+                <img src={'/images/231Tabel9.PNG'} alt={''}/>
                 <h2 style={styles.h2Title}>
                     Kwalitatieve behoefte wonen
                 </h2>
                 <p>
                     De kwalitatieve woningbehoefte is vooral belangrijk als de kwantitatieve behoefte niet overtuigend of zelfs negatief is. De kwalitatieve behoefte kán ook relevant zijn als een plan buiten BSG ligt (zie tekstkader). 
                 </p>
-                <img src={'/images/231Afbeelding0.PNG'}/>
+                <img src={'/images/231Afbeelding0.PNG'} alt={''}/>
                 <h3 style={styles.h3Title}>
                     Kwalitatief aanbod: veel koopwoningen en appartementen in bruto planaanbod
                 </h3>
@@ -166,7 +166,7 @@ export default {
                 <p>
                     Wat vooral opvalt aan onderstaande gegevens over de harde plancapaciteit in het verzorgingsgebied, is dat er met name appartementen in harde plancapaciteit worden voorzien (ruim 35.000 appartementen). Het aandeel grondgebonden woningen is met minder dan 6.400 woningen beperkt. Wel is het aantal grondgebonden woningen in Zaanstreek-Waterland in harde plannen groter dan in Amsterdam. Van een groot aandeel harde plannen is het woningtype echter nog onbekend. Dat geldt ook bij de eigendomsvormen. Daarnaast valt op dat het aantal koopwoningen in harde plannen worden voorzien in de regio (circa 20.700 koopwoningen) bijna even groot is als het totale aantal geplande huurwoningen (23.600).  
                 </p>
-                <img src={'/images/231Tabel10.PNG'}/>
+                <img src={'/images/231Tabel10.PNG'} alt={''}/>
                 <h3 style={styles.h3Title}>
                     Kwalitatieve vraag: vooral vraag naar koopwoningen en appartementen
                 </h3>
@@ -188,8 +188,8 @@ export default {
                 <p>
                 Gezien de onvolkomenheden bij het bepalen van de kwalitatieve behoefte, adviseren we u de kwalitatieve behoefte alleen te motiveren als er kwantitatief geen sluitend verhaal ligt. Anticipeer in dat geval op onderstaande aandachtspunten. Is er wel voldoende kwantitatieve behoefte? Motiveer dan liever dat u een flexibel, breder programma mogelijk maakt. U heeft hier namelijk alle ruimte voor, blijkt uit jurisprudentie. 
                 </p>
-                <img src={'/images/231Tabel11.PNG'}/>
-                <img src={'/images/231Afbeelding1.PNG'}/>
+                <img src={'/images/231Tabel11.PNG'} alt={''}/>
+                <img src={'/images/231Afbeelding1.PNG'} alt={''}/>
                 <p>
                     Noot 7: In de RAP-oplegger is voor 2017-2027 de kwantitatieve en kwalitatieve woningbehoefte bepaald. Bestuurlijk is afgesproken dat deze berekening 2 jaar geldig is.<br />
                     Noot 8: Zolang ‘zacht’ concurreren plannen niet met uw plan qua woningbehoefte (alleen hard planaanbod). Wel kunnen ze, als zij binnen BSG liggen, een reëel alternatief vormen voor beoogde ontwikkelingen buiten BSG.<br />
@@ -204,7 +204,7 @@ export default {
                 <h1 style={styles.h1Title}>
                     Bestaand stedelijk gebied (BSG)
                 </h1>
-                <img src={'/images/24Afbeelding0.PNG'}/>
+                <img src={'/images/24Afbeelding0.PNG'} alt={''}/>
                 <p>
                     Artikel 1.1.1 Bro geeft als definitie voor bestaand stedelijk gebied (BSG):
                 </p>
@@ -214,11 +214,11 @@ export default {
                 <p>
                     Voor ontwikkelingen buiten BSG is in het kader van de Ladder een uitgebreidere motivering vereist. Daarbij moet worden onderbouwd waarom niet binnen het bestaand stedelijk gebied in de behoefte kan worden voorzien. Check daarom altijd of het voorgenomen plan een ontwikkeling binnen of buiten BSG betreft.
                 </p>
-                <img src={'/images/24Afbeelding1.PNG'}/>
+                <img src={'/images/24Afbeelding1.PNG'} alt={''}/>
                 <p>
                     Naast de hiervoor genoemde definitie van bestaand stedelijk gebied, blijkt uit jurisprudentie dat ook de geldende bestemming van een plangebied relevant kan zijn. Geldt er bijvoorbeeld een agrarische bestemming die de ontwikkeling ten behoeve van wonen, dienstverlening, bedrijvigheid, detailhandel of horeca uitsluit, dan is veelal geen sprake van BSG1. Zie bijvoorbeeld: ABRvS 29 april 2015, ECLI:NL:RVS:2015:1340. Zie ook de nieuwe Ladderhandreiking van het Rijk: www.infomil.nl  
                 </p>
-                <img src={'/images/24Afbeelding2.PNG'}/>
+                <img src={'/images/24Afbeelding2.PNG'} alt={''}/>
             </div>
         )
     },    

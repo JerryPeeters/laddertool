@@ -1,12 +1,15 @@
 import React from 'react';
-import infoBlocks from './components/infoBlocks';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import { QuestionScreen, DocPreviewScreen } from './screens';
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
-        infoBlocks['2.4']()
+      <Provider store={store}>
+        <QuestionScreen />
+        <DocPreviewScreen />
+      </Provider>        
       );
   }
 }
-
-export default App;
