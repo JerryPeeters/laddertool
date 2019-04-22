@@ -159,16 +159,17 @@ export default {
         options: [{
             text: `Vul in: Hoeveel woningen bedraagt de additionele woningvraag 
                 in het verzorgingsgebied?`,
-            stateRef: 'X'
+            stateRef: 'x'
         }, {
             text: `Vul in: Hoeveel woningen bedraagt het harde planaanbod in 
                 het verzorgingsgebied?`,
-            stateRef: 'Y'
+            stateRef: 'y'
         }],
         targetKey: '3.4.2',
         append: (state) => {
             const currentYear = new Date().getFullYear();
-            const {x, y} = state;
+            const x = +state.x;
+            const y = +state.y;
             const z = x - y;
             
             return (`

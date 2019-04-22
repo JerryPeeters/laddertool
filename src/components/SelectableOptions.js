@@ -7,6 +7,7 @@ import keyMaker from '../helpers/keyMaker';
 
 export default class SelectableOptions extends React.Component {
     state = {
+        //adds props.options to state because it needs to add keys and selected: false
         options: this.props.options.map( (option) => {
             return {...option, id: keyMaker(), selected: false}
             }),
@@ -53,5 +54,7 @@ const styles = {
 
 SelectableOptions.propTypes = {
     options: PropTypes.array,
-    setNext: PropTypes.func,
+    setNextKey: PropTypes.func,
+    setNextAppend: PropTypes.func,
+    append: PropTypes.func,
 };

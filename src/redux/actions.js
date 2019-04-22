@@ -3,6 +3,7 @@ export const APPEND_DOC = 'APPEND_DOC';
 export const NAVIGATE_TO_QUESTION = 'NAVIGATE_TO_QUESTION';
 export const SET_NEXT_KEY = 'SET_NEXT_KEY';
 export const SET_NEXT_APPEND = 'SET_NEXT_APPEND';
+export const SET_SAVED_INPUTS = 'SET_SAVED_INPUTS';
 export const CLEAR_NEXT = 'CLEAR_NEXT';
 
 //action creators
@@ -22,6 +23,10 @@ export const setNextAppend = update => ({
     type: SET_NEXT_APPEND,
     payload: update,
 });
+export const setSavedInputs = update => ({
+    type: SET_SAVED_INPUTS,
+    payload: update,
+})
 
 //action creators that get acces to getState via thunk middleware
 export const navigate = () => (dispatch, getState) => {

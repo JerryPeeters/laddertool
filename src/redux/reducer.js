@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import { APPEND_DOC, NAVIGATE_TO_QUESTION, SET_NEXT_KEY, SET_NEXT_APPEND, CLEAR_NEXT } from './actions';
+import { APPEND_DOC, NAVIGATE_TO_QUESTION, SET_NEXT_KEY, SET_NEXT_APPEND, CLEAR_NEXT, SET_SAVED_INPUTS } from './actions';
 
 //doc is the submitted doc
 const docReducer = (state = [], action) => {
@@ -35,11 +35,21 @@ const pathReducer = (state = {}, action) => {
             return state;
     }
 };
+//saves all the inputs done by the user, used to fill in templates
+const savedInputsReducer = (state = {}, action) => {
+    switch (action.type) {
+        case SET_SAVED_INPUTS:
+            return {...state, ...action.payload};
+        default:
+            return state;
+    }
+};
 
 const reducer = combineReducers({
     doc: docReducer,
     path: pathReducer,
     next: nextReducer,
+    savedInputs: savedInputsReducer,
 });
 
 export default reducer;
