@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setNextKey, navigate, setNextAppend, setSavedInputs } from '../redux/actions';
-import { SelectableOptions, TextInputOptions } from './';
+import { SelectableOptions, TextInputOptions, InfoModal } from './';
 
 //the object with questionData
 import questions, { directAppend, textInput, select } from '../data/questionData'; 
+//the object with additionalinfo. Returns the JSX to render.
+import InfoBlocks from './InfoBlocks';
 
 /*
 Component only gets the questionKey from the store, 
@@ -71,6 +73,7 @@ class Question extends React.Component {
         return (
             <>
                 <h1>{this.props.title}</h1>
+                {this.props.additionalInfo ? <InfoModal additionalInfo={this.props.additionalInfo}/> : null}
                 {this.renderCorrectOptionType()}
                 <button onClick={this.props.navigate}>Volgende</button>    
             </>
