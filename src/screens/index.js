@@ -4,3 +4,4 @@
 
 export { default as QuestionScreen } from './QuestionScreen';
 export { default as DocPreviewScreen } from './DocPreviewScreen';
+export { default as TitleScreen } from './TitleScreen';

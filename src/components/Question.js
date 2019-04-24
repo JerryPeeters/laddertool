@@ -69,16 +69,30 @@ class Question extends React.Component {
     render() { 
         //needs a key or it wont update the component
         return (
-            <>
+            <div style={styles.flexBox}>
                 <h1>{this.props.title}</h1>
                 {this.props.additionalInfo ? <InfoModal additionalInfo={this.props.additionalInfo}/> : null}
                 {this.renderCorrectOptionType()}
                 <button onClick={this.props.navigate}>Volgende</button>    
-            </>
+            </div>
     )}
 }
 
 export default connect(mapStateToProps, {setNextKey, setNextAppend, setSavedInputs, navigate})(Question);
+
+const styles = {
+    flexBox: {
+        backgroundColor: 'white',
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        padding: '50px',
+        margin: '20px',
+        minWidth: '400px',
+        maxWidth: '800px',
+        flexBasis: 'auto',
+        flexGrow: 1,
+    }
+}
 
 Question.propTypes = {
     currentQuestion: PropTypes.string,
