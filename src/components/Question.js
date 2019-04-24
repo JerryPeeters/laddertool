@@ -6,8 +6,6 @@ import { SelectableOptions, TextInputOptions, InfoModal } from './';
 
 //the object with questionData
 import questions, { directAppend, textInput, select } from '../data/questionData'; 
-//the object with additionalinfo. Returns the JSX to render.
-import InfoBlocks from './InfoBlocks';
 
 /*
 Component only gets the questionKey from the store, 

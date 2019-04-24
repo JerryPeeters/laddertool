@@ -10,7 +10,7 @@ class DocPreviewScreen extends React.PureComponent {
   
     render() {
         return (
-            <div>
+            <div id='doc'>
                 {this.props.doc.map( par => <p key={keyMaker()}>{par}</p> )}
             </div>
         )

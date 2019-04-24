@@ -13,7 +13,7 @@ export default class TextInputOptions extends React.Component {
         //handles controlled input in redux because it wants to store the values for later. 
         let update = {[key]: event.target.value}
         this.props.setSavedInputs(update); //IT WORKS!!
-        this.props.setNextAppend(this.props.append({...this.props.savedInputs, ...update}));
+        if (this.props.append) this.props.setNextAppend(this.props.append({...this.props.savedInputs, ...update}));
     }
     render() {
         return (

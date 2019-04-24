@@ -4,7 +4,6 @@ import keyMaker from '../helpers/keyMaker';
 
 //only used for questions with inputType: select
 
-
 export default class SelectableOptions extends React.Component {
     state = {
         //adds props.options to state because it needs to add keys and selected: false
@@ -13,6 +12,16 @@ export default class SelectableOptions extends React.Component {
             }),
     }
     handleSelect = (selectedId, targetKey, append) => {
+        if (targetKey === 'clickToCopy') {
+            //copy the preview, works for IE, thanks SO
+            let range = document.createRange();
+            range.selectNode(document.getElementById("doc"));
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();// to deselect
+        };
+        
         if (targetKey) this.props.setNextKey(targetKey); //preload the selection in store if it's there
         if (append) this.props.setNextAppend(append());
         

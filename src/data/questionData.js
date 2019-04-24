@@ -20,8 +20,37 @@ export default {
         inputType: select,
         options: [{
             text: `Functie wonen.`, 
-            targetKey: '3.1'
+            targetKey: 'startWoning'
             }]
+    },
+    'end': {
+        title: 'U heeft de vragenlijst doorlopen. Wat wilt u nu doen?',
+        inputType: select,
+        options: [{
+            text: 'Onderbouwing voor een andere functie toevoegen.',
+            targetKey: 'start'
+        }, {
+            text: 'Klik hier om de onderbouwing te kopiëren.',
+            targetKey: 'clickToCopy'
+        }]
+    },
+    'startWoning':{
+        title: 'Informatie over het plan',
+        inputType: textInput,
+        options: [{
+            text: 'Naam van het bestemmingsplan/de omgevingsvergunning: ',
+            stateRef: 'planNaam'
+        }, {
+            text: 'Plaatsnaam: ',
+            stateRef: 'plaatsNaam'
+        }, {
+            text: 'Naam van het vigerende bestemmingsplan / vigerende beheersverordening: ',
+            stateRef: 'vigerendPlan'
+        }, {
+            text: 'Aantal woningen dat wordt mogelijk gemaakt: ',
+            stateRef: 'woningAantal'
+        }],
+        targetKey: '3.1',
     },
     '3.1': {
         title: `Achtergrond Plan`,
@@ -182,7 +211,7 @@ export default {
             • De additionele woningvraag in het verzorgingsgebied bedraagt ${x} woningen.
             • Het harde planaanbod in het verzorgingsgebied bedraagt ${y} woningen.
             • De resterende behoefte die hieruit voortvloeit is ${z} woningen.
-            • Plan ${state.planNaam} telt met ${state.woningAantal} woningen minder woningen dan de resterende behoefte, namelijk [Z] woningen.
+            • Plan ${state.planNaam} telt met ${state.woningAantal} woningen minder woningen dan de resterende behoefte, namelijk ${z} woningen.
             • Kortom, plan ${state.planNaam} voorziet in een kwantitatieve behoefte.
             `)
         }
