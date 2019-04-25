@@ -45,7 +45,7 @@ export default class SelectableOptions extends React.Component {
                 {this.state.options.map( option => (
                     <span 
                         key={option.id}
-                        style={option.selected ? styles.highlight : null} 
+                        style={option.selected ? styles.highlight : styles.option} 
                         onClick={() => this.handleSelect(option.id, option.targetKey, option.append)}>
                     {option.text}
                     </span>
@@ -56,8 +56,29 @@ export default class SelectableOptions extends React.Component {
 
 const styles = {
     highlight: {
-        backgroundColor: 'blue',
+        backgroundColor: '#17a697',
+        border: 'none',
         color: 'white',
+        borderRadius: 15,
+        padding: 25,
+        paddingLeft: 35,
+        paddingRight: 35,
+        fontSize: 18,
+        marginBottom: 20,
+        alignSelf: 'flex-start',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    }, 
+    option: {
+        backgroundColor: 'white',
+        border: 'none',
+        borderRadius: 15,
+        padding: 25,
+        paddingLeft: 35,
+        paddingRight: 35,
+        fontSize: 18,
+        marginBottom: 20,
+        alignSelf: 'flex-start',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     }
 };
 

@@ -9,24 +9,18 @@ const mapStateToProps = state => ({
 class DocPreviewScreen extends React.PureComponent {
   
     placeHolder = () => {
-        if (this.props.map) {
+        if (this.props.doc) {
             return this.props.doc.map( par => <p key={keyMaker()}>{par}</p> )
         } else {
-            return (
-            <p>
-                .
-                ...
-                ....
-            </p>
-            )
+            return 
         }
     }
 
     render() {
         return (
             <div id='doc' style={styles.flexBox}>
-                <h1>Document preview</h1>
-                {this.props.doc.map( par => <p key={keyMaker()}>{par}</p> )}
+                <h1 style={styles.title}>Document preview</h1>
+                {this.placeHolder()}
             </div>
         )
     }
@@ -35,14 +29,22 @@ class DocPreviewScreen extends React.PureComponent {
 export default connect(mapStateToProps)(DocPreviewScreen);
 
 const styles = {
+    title: {
+        marginTop: 0,
+    },
     flexBox: {
         backgroundColor: 'white',
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-        padding: '50px',
+        borderRadius: 15,
+        padding: 25,
+        paddingLeft: 35,
+        paddingRight: 35,
         margin: '20px',
         minWidth: '400px',
         maxWidth: '800px',
+        minHeight: '300px',
         flexBasis: 'auto',
         flexGrow: 1,
+        alignSelf: 'flex-start',
     }
 }

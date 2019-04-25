@@ -20,7 +20,7 @@ export default {
         inputType: select,
         options: [{
             text: `Functie wonen.`, 
-            targetKey: 'startWoning'
+            targetKey: '3.1'
             }]
     },
     'end': {

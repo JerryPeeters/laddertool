@@ -16,20 +16,19 @@ const styles = {
     flexBox: {
         flexBasis: 'auto',
         flexGrow: 1,
-        backgroundColor: 'black',
         marginBottom: 15,
     },
     textBox: {
         margin: '20px',
+        color: 'white',
         alignSelf: 'flex-start',
-        padding: 30,
+        padding: 10,
         paddingTop: 15,
         paddingBottom: 15,
         borderRadius: 25,
         width: 450,
         fontWeight: 'bold',
         fontSize: 50,
-        color: '#d93240',
         borderBottom: '5px #e0e0e0',
         borderLeft: '5px #e0e0e0',
     }

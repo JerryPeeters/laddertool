@@ -70,10 +70,17 @@ class Question extends React.Component {
         //needs a key or it wont update the component
         return (
             <div style={styles.flexBox}>
-                <h1>{this.props.title}</h1>
-                {this.props.additionalInfo ? <InfoModal additionalInfo={this.props.additionalInfo}/> : null}
-                {this.renderCorrectOptionType()}
-                <button onClick={this.props.navigate}>Volgende</button>    
+                <div>
+                    <h1 style={styles.questionTitle}>{this.props.title}</h1>  
+                </div>
+                    {this.props.additionalInfo ? <InfoModal additionalInfo=
+                    {this.props.additionalInfo}/> : null}
+                <div style={styles.optionsBox}>                    
+                    {this.renderCorrectOptionType()}
+                </div>
+                <div style={styles.buttonRow}>
+                    <button style={styles.nextButton}onClick={this.props.navigate}>Verder >></button>
+                </div>  
             </div>
     )}
 }
@@ -82,15 +89,45 @@ export default connect(mapStateToProps, {setNextKey, setNextAppend, setSavedInpu
 
 const styles = {
     flexBox: {
-        backgroundColor: 'white',
-        borderRadius: '10px',
+        backgroundColor: '#f8f9fa',
+        borderRadius: 15,
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-        padding: '50px',
+        padding: 25,
+        paddingLeft: 35,
+        paddingRight: 35,
         margin: '20px',
         minWidth: '400px',
         maxWidth: '800px',
         flexBasis: 'auto',
         flexGrow: 1,
+        flexDirection: 'column',
+        alignSelf: 'flex-start',
+    },
+    questionTitle: {
+        marginTop: 0,
+        fontSize: 34,
+    },
+    optionsBox: {
+        marginTop: 40,
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    buttonRow: {
+        display: 'flex',
+        justifyContent: 'flex-end'
+    },
+    nextButton: {
+        backgroundColor: '#638ca6',
+        border: 'none',
+        color: 'white',
+        borderRadius: 15,
+        padding: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        fontSize: 18,
+        alignSelf: 'flex-end',
+        marginTop: 20,
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     }
 }
 

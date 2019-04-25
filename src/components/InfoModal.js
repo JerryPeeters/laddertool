@@ -25,8 +25,9 @@ export default class InfoModal extends React.Component {
             <>
                 {this.props.additionalInfo.map( item => (
                     <>
-                        <span onClick={this.getOpenModalHandler(item.targetKey)}>{item.text}</span>
+                        <span style={styles.text}onClick={this.getOpenModalHandler(item.targetKey)}>{item.text}</span>
                         <Modal
+                            style={styles.modal}
                             key={item.targeKey}
                             isOpen={this.state.showModal[item.targetKey]}
                             onRequestClose={this.getCloseModalHandler(item.targetKey)}
@@ -38,6 +39,13 @@ export default class InfoModal extends React.Component {
                 ))}
             </>
         )
+    }
+}
+const styles = {
+    modal: {
+    },
+    text: {
+        fontStyle: 'italic',
     }
 }
 

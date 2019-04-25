@@ -7,22 +7,26 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div style={styles.container}>
-          <div style={styles.subContainer}> 
-            <TitleScreen />
-            <div style={{width: '100%'}}></div>
-            <QuestionScreen />
-            <DocPreviewScreen />
+          <div style={styles.backgroundImage}>
+          <div style={styles.container}>
+            <div style={styles.subContainer}> 
+              <TitleScreen />
+              <div style={{width: '100%'}}></div>
+              <QuestionScreen />
+              <DocPreviewScreen />
+            </div>
           </div>
-        </div>
+          </div>
       </Provider>        
       );
   }
 }
 
 const styles = {
+  backgroundImage: {
+
+  },
   container: {
-    backgroundColor: '#f8f9fa',
     height: '100%',
     display: 'flex',
     justifyContent: 'center',
