@@ -15,11 +15,22 @@ Append: Not all questions have an append. The React.Component should check wethe
 */
 
 export default {
+    'welkom': {
+        title: 'U komt een document aanmaken, slim!',
+        inputType: select,
+        additionalInfo: [{
+            text: 'We bewandelen een vragenpad en gaandeweg bouwt het document op, makkelijk toch?'
+        }],
+        options: [{
+            text: 'Jazeker, laten we beginnen!',
+            targetKey: 'start',
+        }],
+    },
     'start': {
         title: 'Voor welke functie wilt u een onderbouwing maken?',
         inputType: select,
         options: [{
-            text: `Functie wonen.`, 
+            text: `Functie wonen`, 
             targetKey: '3.1'
             }]
     },
@@ -30,7 +41,7 @@ export default {
             text: 'Onderbouwing voor een andere functie toevoegen.',
             targetKey: 'start'
         }, {
-            text: 'Klik hier om de onderbouwing te kopiëren.',
+            text: 'Klik hier om de opgebouwde tekst te kopiëren.',
             targetKey: 'clickToCopy'
         }]
     },
@@ -56,13 +67,8 @@ export default {
         title: `Achtergrond Plan`,
         inputType: textInput,
         options: [{
-            text: `Geef hier een omschrijving van uw plan en woningbouwprogramma. Hoe specifieker u bent, des te gerichter kunt u uw plan doorgaans1 onderbouwen. Met sterke kwalitatieve argumenten kunt u immers onderbouwen waarom een locatie geschikt is (en waarom eventuele alternatieven binnen BSG dat niet zijn). Denk aan:
-                <br>• Ligging, en oppervlakte plangebied
-                <br>• Ruimtelijke opzet
-                <br>• Woningdichtheid
-                <br>• Aantal woningen
-                <br>• Verdeling naar typologie (appartementen, grondgebonden), oppervlakte-, prijsklassen
-                <br>• Soort woonmilieu`, 
+            text: `Geef hier een omschrijving van uw plan en woningbouwprogramma. Hoe specifieker u bent, des te gerichter kunt u uw plan doorgaans onderbouwen. Met sterke kwalitatieve argumenten kunt u immers onderbouwen waarom een locatie geschikt is (en waarom eventuele alternatieven binnen BSG dat niet zijn). Denk aan:
+            ligging, en oppervlakte plangebied, ruimtelijke opzet, woningdichtheid, aantal woningen, verdeling naar typologie (appartementen, grondgebonden), oppervlakte-, prijsklassen, soort woonmilieu.`, 
             stateRef: `achtergrond`
             }], 
         targetKey: '3.2',
@@ -186,11 +192,11 @@ export default {
             targetKey: '2.3.1',
         }],
         options: [{
-            text: `Vul in: Hoeveel woningen bedraagt de additionele woningvraag 
+            text: `Hoeveel woningen bedraagt de additionele woningvraag 
                 in het verzorgingsgebied?`,
             stateRef: 'x'
         }, {
-            text: `Vul in: Hoeveel woningen bedraagt het harde planaanbod in 
+            text: `Hoeveel woningen bedraagt het harde planaanbod in 
                 het verzorgingsgebied?`,
             stateRef: 'y'
         }],

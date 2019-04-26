@@ -1,10 +1,3 @@
-entry questions for state:
-planNaam
-woningAantal
-plaatsNaam
-vigerendPlan
-
-
 question.inputTypes {
     textInput: 1 option, appendTextInput, textHandler, 1 nextKey
 

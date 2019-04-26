@@ -4,9 +4,11 @@ export default (props) => {
     return (
         <div style={styles.flexBox}>
             <div style={styles.textBox}>
-                <span>
-                    Doc Builder
-                </span>
+                <a href='/' style={styles.cleanLink}>
+                    <span>
+                        Doc Builder
+                    </span>
+                </a>
             </div>
         </div>
     )    
@@ -17,6 +19,10 @@ const styles = {
         flexBasis: 'auto',
         flexGrow: 1,
         marginBottom: 15,
+    },
+    cleanLink: {
+        color: 'inherit',
+        textDecoration: 'inherit',
     },
     textBox: {
         margin: '20px',

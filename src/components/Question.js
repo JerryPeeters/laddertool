@@ -21,9 +21,13 @@ const mapStateToProps = state => ({
     currentQuestion: state.path.currentQuestion,
     ...questions[state.path.currentQuestion],
     savedInputs: state.savedInputs,
+    nextTargetKey: state.next.targetKey,
 })
 
 class Question extends React.Component {
+    componentDidMount() {
+        document.addEventListener('keypress', this.handleSubmit);
+    }
     componentDidUpdate() {
         if (this.props.targetKey) { 
             //if the question contains a targetKey at top level, then it only has one targetKey and shouldn't contain any in the options. In which case we autoreload it.
@@ -38,7 +42,14 @@ class Question extends React.Component {
             this.props.navigate();
             return false
         } else return true
-    }    
+    }   
+    handleSubmit = (event) => {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            this.props.navigate();
+        }
+
+    } 
     renderCorrectOptionType = () => {
         switch (this.props.inputType) {
             case select:
@@ -79,7 +90,7 @@ class Question extends React.Component {
                     {this.renderCorrectOptionType()}
                 </div>
                 <div style={styles.buttonRow}>
-                    <button style={styles.nextButton}onClick={this.props.navigate}>Verder >></button>
+                    <button style={this.props.nextTargetKey ? styles.nextButtonReady : styles.nextButtonWaiting} onClick={this.props.navigate}>Verder >></button>
                 </div>  
             </div>
     )}
@@ -116,7 +127,20 @@ const styles = {
         display: 'flex',
         justifyContent: 'flex-end'
     },
-    nextButton: {
+    nextButtonWaiting: {
+        backgroundColor: 'white',
+        border: 'none',
+        color: 'gray',
+        borderRadius: 15,
+        padding: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        fontSize: 18,
+        alignSelf: 'flex-end',
+        marginTop: 20,
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    },
+    nextButtonReady: {
         backgroundColor: '#638ca6',
         border: 'none',
         color: 'white',
@@ -127,6 +151,7 @@ const styles = {
         fontSize: 18,
         alignSelf: 'flex-end',
         marginTop: 20,
+        cursor: 'pointer',
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     }
 }

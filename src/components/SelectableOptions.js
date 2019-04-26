@@ -20,9 +20,7 @@ export default class SelectableOptions extends React.Component {
             window.getSelection().addRange(range); // to select text
             document.execCommand("copy");
             window.getSelection().removeAllRanges();// to deselect
-        };
-        
-        if (targetKey) this.props.setNextKey(targetKey); //preload the selection in store if it's there
+        } else if (targetKey) this.props.setNextKey(targetKey); //preload the selection in store if it's there
         if (append) this.props.setNextAppend(append());
         
         this.setState(prevState => ( //set highlightflag
@@ -67,9 +65,10 @@ const styles = {
         marginBottom: 20,
         alignSelf: 'flex-start',
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        cursor: 'pointer',
     }, 
     option: {
-        backgroundColor: 'white',
+        backgroundColor: '#f4f4f4',
         border: 'none',
         borderRadius: 15,
         padding: 25,
@@ -78,6 +77,7 @@ const styles = {
         fontSize: 18,
         marginBottom: 20,
         alignSelf: 'flex-start',
+        cursor: 'pointer',
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     }
 };

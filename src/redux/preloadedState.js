@@ -1,6 +1,6 @@
 export default {
     path: {
-        currentQuestion: 'start',
+        currentQuestion: 'welkom',
     },
     savedInputs: {},
 }

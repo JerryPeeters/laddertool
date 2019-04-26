@@ -23,29 +23,58 @@ export default class InfoModal extends React.Component {
         if (!this.props.additionalInfo) return null
         return(
             <>
-                {this.props.additionalInfo.map( item => (
+                {this.props.additionalInfo.map( item => {
+                    if (!item.targetKey) {
+                        return <div style={styles.text}>{item.text}</div>
+                    } else return (
                     <>
-                        <span style={styles.text}onClick={this.getOpenModalHandler(item.targetKey)}>{item.text}</span>
+                        <div style={styles.text}onClick={this.getOpenModalHandler(item.targetKey)}>{item.text}</div>
                         <Modal
-                            style={styles.modal}
+                            style={{overlay: styles.modalContainer, content: styles.modal}}
                             key={item.targeKey}
                             isOpen={this.state.showModal[item.targetKey]}
                             onRequestClose={this.getCloseModalHandler(item.targetKey)}
                             >
-                                <button onClick={this.getCloseModalHandler(item.targetKey)}>Terug</button>
+                                <button onClick={this.getCloseModalHandler(item.targetKey)} style={styles.backButton}>{'<< '}Terug</button>
                                 {InfoBlocks[item.targetKey]()}
                         </Modal>
                     </>
-                ))}
+                )})}
             </>
         )
     }
 }
 const styles = {
     modal: {
+        backgroundColor: '#f8f9fa',
+        borderRadius: 15,
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        padding: 25,
+        paddingLeft: 35,
+        paddingRight: 35,
+        margin: '20px',
+        minWidth: '400px',
+        maxWidth: '800px',
+    },
+    modalContainer: {
     },
     text: {
         fontStyle: 'italic',
+        cursor: 'pointer',
+    }, 
+    backButton: {
+        backgroundColor: '#638ca6',
+        border: 'none',
+        color: 'white',
+        borderRadius: 15,
+        padding: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        fontSize: 18,
+        alignSelf: 'flex-end',
+        marginTop: 20,
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        cursor: 'pointer',
     }
 }
 
